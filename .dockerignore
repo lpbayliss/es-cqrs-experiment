@@ -1,0 +1,12 @@
+fly.toml
+Dockerfile
+.dockerignore
+node_modules
+.git
+*.md
+dist
+.env
+.commitlintrc
+.eslintignore
+.eslint.yaml
+.editorconfig
