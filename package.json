@@ -7,6 +7,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "node ./dist/index.js",
+    "develop": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier . --check",
     "format:fix": "prettier . --write",
@@ -26,6 +27,7 @@
     "@ts-rest/core": "^3.30.2",
     "@ts-rest/fastify": "^3.30.2",
     "@types/node": "^20.6.0",
+    "bee-queue": "^1.7.0",
     "default-import": "^1.1.5",
     "dotenv": "^16.3.1",
     "drizzle-kit": "^0.19.13",
@@ -34,19 +36,30 @@
     "pino": "^8.15.1",
     "pino-pretty": "^10.2.0",
     "postgres": "^3.4.3",
+    "redis": "^4.6.10",
     "typescript": "^5.2.2",
+    "uuid": "^9.0.1",
     "zod": "^3.22.2"
   },
   "devDependencies": {
+    "@types/uuid": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.49.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
+    "nodemon": "^3.0.1",
     "prettier": "^3.0.3"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "tsc -p tsconfig.json && node ./dist/index.js"
   }
 }

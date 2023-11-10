@@ -6,6 +6,7 @@ import config from './services/config.service.js';
 import { healthRouter } from './routers/health.router.js';
 import { server } from './routers/server.js';
 import { membershipsRouter } from './routers/memberships.router.js';
+import { initWorkers } from './workers/index.js';
 
 const app = fastify({ logger });
 await app.register(cors);
@@ -26,6 +27,8 @@ export const start = async () => {
     });
 
     process.stdin.resume();
+
+    initWorkers();
 
     // Graceful shutdown of server
     process.on('SIGINT', () => {
