@@ -4,12 +4,14 @@ import helmet from '@fastify/helmet';
 import { logger } from './services/logger.service.js';
 import config from './services/config.service.js';
 import { healthRouter } from './routers/health.router.js';
-import { server } from './routers/index.js';
+import { server } from './routers/server.js';
+import { membershipsRouter } from './routers/memberships.router.js';
 
 const app = fastify({ logger });
 await app.register(cors);
 await app.register(helmet, { contentSecurityPolicy: false });
 app.register(server.plugin(healthRouter));
+app.register(server.plugin(membershipsRouter));
 
 export const start = async () => {
   try {

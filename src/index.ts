@@ -1,3 +1,3 @@
-import { start } from './infrastructure/app.js';
+import { start } from './app.js';
 
 start();
