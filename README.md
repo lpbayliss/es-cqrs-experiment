@@ -1,4 +1,4 @@
-# Fastify TS-Rest Starter
+# es-cqrs-experiment
 
 ## Project Setup
 
