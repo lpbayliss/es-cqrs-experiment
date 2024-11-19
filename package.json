@@ -31,7 +31,7 @@
     "default-import": "^1.1.5",
     "dotenv": "^16.3.1",
     "drizzle-kit": "^0.19.13",
-    "drizzle-orm": "^0.28.6",
+    "drizzle-orm": "^0.36.0",
     "fastify": "^4.23.0",
     "pino": "^8.15.1",
     "pino-pretty": "^10.2.0",
